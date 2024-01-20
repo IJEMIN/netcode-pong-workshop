@@ -115,7 +115,6 @@ public class GameManager : NetworkBehaviour
             // 플레이어 프리팹을 인스턴스화하고 네트워크 스폰
             var playerGameObject = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
             var playerPaddle = playerGameObject.GetComponent<PlayerPaddle>();
-            // 다른 씬으로 이동할때 파괴되도록 함
             playerPaddle.NetworkObject.SpawnAsPlayerObject(client.ClientId);
             
             // 플레이어의 스폰 위치와 색상을 클라이언트에게 전달
